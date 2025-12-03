@@ -20,6 +20,7 @@
 // }
 
 // Evento "load" inicial
+/*
 window.addEventListener("load", function () {
   // Comprobar si el usuario ya está autenticado
   var isLoggedIn = sessionStorage.getItem('isLoggedIn');
@@ -51,4 +52,4 @@ function mostrarContenido() {
   if (contentContainer) {
       contentContainer.style.display = 'block';
   }
-}
+}*/

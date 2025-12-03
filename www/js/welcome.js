@@ -1,5 +1,5 @@
 // Establece la fecha objetivo
-const fechaObjetivo = new Date("Nov 29, 2025 13:30:00").getTime();
+const fechaObjetivo = new Date("May 02, 2026 13:00:00").getTime();
 
 // Actualiza la cuenta regresiva cada 1 segundo
 const x = setInterval(function () {
@@ -33,8 +33,8 @@ const x = setInterval(function () {
 // Función para mostrar Google Maps
 function initMap() {
   // const iglesia = { lat: 40.02869584738222, lng: -6.0931973312285495 };
-  const finca = { lat: 41.513338993899914, lng: 2.2339041952419825 };
-  const center = { lat: 41.513338993899914, lng: 2.2339041952419825 };
+  const finca = { lat: 43.11481031351038, lng: -2.6021793873448282 };
+  const center = { lat: 43.11481031351038, lng: -2.6021793873448282 };
 
   var map = new google.maps.Map(document.getElementById("mapDiv"), {
     zoom: 9,

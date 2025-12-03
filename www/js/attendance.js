@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   checkboxSi.addEventListener("change", habilitarCampoAcompanante);
   checkboxNo.addEventListener("change", habilitarCampoAcompanante);
-  // busSi.addEventListener("change", habilitarBus);
-  // busNo.addEventListener("change", habilitarBus);
+  busSi.addEventListener("change", habilitarBus);
+  busNo.addEventListener("change", habilitarBus);
   // carne.addEventListener("change", habilitarComida);
   // pescado.addEventListener("change", habilitarComida);
 
@@ -34,14 +34,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // function habilitarBus(event) {
-  //   // Desmarcar el otro checkbox
-  //   if (busNo.checked && event.target === busSi) {
-  //     busNo.checked = false;
-  //   } else if (busSi.checked && event.target === busNo) {
-  //     busSi.checked = false;
-  //   }
-  // }
+   function habilitarBus(event) {
+     // Desmarcar el otro checkbox
+     if (busNo.checked && event.target === busSi) {
+       busNo.checked = false;
+     } else if (busSi.checked && event.target === busNo) {
+       busSi.checked = false;
+     }
+   }
 
   // function habilitarComida(event) {
   //   // Desmarcar el otro checkbox
@@ -169,7 +169,7 @@ document.getElementById('attendance-form').addEventListener("submit", function (
   var name = document.getElementById("nombre").value;
   var phone = document.getElementById("telefono").value;
   var allergies = document.getElementById("alergias").value;
-  var song = document.getElementById("cancion").value;
+  //var song = document.getElementById("cancion").value;
   var attendance = document.getElementById("acompanadoSi").checked;
 
   // if (type) {
@@ -178,7 +178,7 @@ document.getElementById('attendance-form').addEventListener("submit", function (
   //   type = "Niño";
   // }
 
-  // var bus = document.getElementById("busSi").checked;
+  var bus = document.getElementById("busSi").checked;
   // var comida = document.getElementById("carne").checked;
 
   // if (comida) {
@@ -220,8 +220,8 @@ document.getElementById('attendance-form').addEventListener("submit", function (
     Teléfono: phone,
     Asistencia: attendance,
     Alergias: allergies,
-    Cancion: song,
-    // Bus: bus,
+    //Cancion: song,
+    Bus: bus,
     // Comida: comida,
     Acompañantes: acompanantes
   })
@@ -236,7 +236,7 @@ document.getElementById('attendance-form').addEventListener("submit", function (
         ph: phone,
         att: attendance,
         ale: allergies,
-        song: song,
+        bus: bus,
         gue: acompanantes
       };
       enviarEmail(emailData);
@@ -252,9 +252,9 @@ document.getElementById('attendance-form').addEventListener("submit", function (
   document.getElementById("alergias").value = "";
   document.getElementById("acompanadoSi").checked = "";
   document.getElementById("acompanadoNo").checked = "";
-  document.getElementById("cancion").value = "";
-  // document.getElementById("busSi").checked = "";
-  // document.getElementById("busNo").checked = "";
+  //document.getElementById("cancion").value = "";
+  document.getElementById("busSi").checked = "";
+  document.getElementById("busNo").checked = "";
   // document.getElementById("carne").checked = "";
   // document.getElementById("pescado").checked = "";
   // document.getElementById("adulto").checked = "";
