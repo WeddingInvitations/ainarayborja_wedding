@@ -23,15 +23,24 @@ body.custom-body {
     color: darkolivegreen;
 }
 
+div.body-computer{
+    padding-left: 20%;
+    padding-right: 20%;
+    background-color: #EEEEEE;
+}
+
 
 
 /* PORTADA */
 
-header {
+header{
     position: relative;
-    height: 500px; /* Altura del header */
-    overflow: hidden; /* Oculta cualquier desbordamiento */
-    background-image: url('../images/image_1.jpg'); /* Ruta de la imagen */
+    height: 500px;
+    overflow: hidden;
+    background-image: url(../images/image_1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center 25%;
 }
 
 #banner {
@@ -94,10 +103,19 @@ header {
 }
 
 @media only screen and (max-width: 600px) {
+
+    div.body-computer{
+        padding-left: 0;
+        padding-right: 0;
+        background-color: #FFF;
+    }
+
     header {
-        background-size: cover;
-        /* background-image: url('images/header.png'); */
+        position: relative;
         height: 300px;
+        overflow: hidden; /* Oculta cualquier desbordamiento */
+        background-image: url('../images/image_1.jpg'); /* Ruta de la imagen */
+        background-size: cover;       
     }
 
     #banner {
@@ -114,13 +132,17 @@ header {
 
     .animated-title {
         display: inline-block; /* Permite aplicar transformaciones a cada letra */
-        font-size: 3em; /* Ajusta el tamaño según tu preferencia */
+        font-size: 2.5em; /* Ajusta el tamaño según tu preferencia */
         color: white; /* Cambia el color según lo que mejor resalte */
         /* margin-left: -55px; */
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejor legibilidad */
         margin-left: 0;
         margin-right: 260px;
         margin-top: revert-layer;
+    }
+
+    .animated-title .pareja {
+        margin-bottom: 65px;
     }
 }
 
@@ -207,6 +229,7 @@ audio {
 #bienvenidos {
     text-align: center;
     padding: 20px;
+    background-color: white;
 }
 
 #bienvenidos h1 {
@@ -222,9 +245,10 @@ audio {
     padding: 10px; /* Ajusta el relleno según sea necesario */
 }
 
+
 .bienvenidos-texto img {
     max-width: 100%;
-    height: auto;
+    height: 450px;
     border-radius: 10px;
     margin-top: 10px;
 }
@@ -256,7 +280,15 @@ audio {
     margin: 0 10px;
   }
 
+  @media only screen and (max-width: 600px) {
 
+        .bienvenidos-texto img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+   }
 
 
 
@@ -265,6 +297,7 @@ audio {
 #general-information {
     text-align: center;
     padding: 20px;
+    background-color: #FFF;
 }
 
 #general-information h1 {
@@ -419,6 +452,16 @@ audio {
     max-width: 4%;
 }
 
+.element_itinerario,
+.element_ceremonia,
+.element_bienvenidos,
+.element_nosotros,
+.element_asistencia,
+.element_interes {
+    max-width: 3%;
+}
+
+
 @media only screen and (max-width: 600px) {
 
     .element_itinerario,
@@ -449,16 +492,29 @@ audio {
 
 /* INFORMACIÓN DE INTERÉS */
 
+.table-computer table{
+    width: fit-content;
+    margin: auto;
+}
+
+.table-computer table tbody td {
+    padding: 10px;
+    text-align: left;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
 #info_interes {
     text-align: center;
     padding: 20px;
+    background-color: #FFF;
 }
 
-/* @media only screen and (max-width: 600px) {
-    #info_interes {
-        background-size: auto;
+ @media only screen and (max-width: 600px) {
+    .table-computer{
+        display: none;
     }
-} */
+} 
 
 #info_interes h1 {
     color: #5F8575;
@@ -558,6 +614,7 @@ audio {
 #carrousel {
     text-align: center;
     padding: 20px;
+    background-color: #FFF;
 }
 
 #carrousel h1 {
@@ -576,9 +633,9 @@ audio {
 
 .carousel-item img {
     max-height: 450px;
-    max-width: 30%;
+    max-width: 60%;
     object-fit: cover;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .carousel-caption {
@@ -621,8 +678,8 @@ audio {
 
 #asistencia {
     text-align: center;
-    padding: 40px 20px;
-    /* background-color: #e6d7b3; */
+    padding: 0 20px;
+    background-color: #FFF; 
 }
 
 #asistencia h1 {
@@ -643,7 +700,7 @@ audio {
     border-radius: 40px;
     padding: 20px 0;
     box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
     margin: 0 auto;
 }
@@ -664,6 +721,18 @@ label {
 input[type="text"],
 input[type="tel"] {
     position: relative;
+    width: 50%;
+    border: none;
+    border-radius: 26px;
+    background: #5F8575;
+    font-size: revert;
+    margin: 10px;
+    color: #FFF;
+}
+.acompanante input[type="text"],
+.acompanante input[type="tel"],
+.acompanante input[type="number"]{
+    position: relative;
     width: 100%;
     border: none;
     border-radius: 26px;
@@ -672,6 +741,16 @@ input[type="tel"] {
     margin: 10px;
     color: #FFF;
 }
+.acompanante select{
+    max-height: 30px;
+    cursor: pointer;
+}
+
+.acompanante .select_edad{
+    align-items: center;
+    max-height: 20px;
+}
+
 
 input[type="text"]:focus,
 input[type="tel"]:focus {
@@ -680,7 +759,7 @@ input[type="tel"]:focus {
 }
 
 input::placeholder {
-    color: #888888;
+    color: #FFF;
 }
 
 /* Radio buttons */
@@ -718,10 +797,24 @@ label[for="busNo"]  {
     padding: 20px;
     background-color: white;
     z-index: 1000;
-    width: max-content;
+    width: 450px;
+}
+.asistencia-texto{
+    min-height: 750px;
 }
 
 @media only screen and (max-width: 600px) {
+
+    .acompanante select{
+        max-width: 40%;
+    }
+
+    #asistencia {
+        text-align: center;
+        padding: 40px 20px;
+        background-color: #FFF; 
+    }
+
     #popup {
         display: none;
         position: fixed;
@@ -732,6 +825,18 @@ label[for="busNo"]  {
         background-color: white;
         z-index: 1000;
         width: 350px;
+    }
+
+    input[type="text"],
+    input[type="tel"] {
+        position: relative;
+        width: 100%;
+        border: none;
+        border-radius: 26px;
+        background: #5F8575;
+        font-size: revert;
+        margin: 10px;
+        color: #FFF;
     }
 }
 
@@ -821,7 +926,8 @@ label[for="busNo"]  {
 /* Botón de enviar: Estilo Business */
 button#submit,
 button#addAcompananteButton,
-button#guardarButton {
+button#guardarButton,
+button#deleteAcompananteButton {
    background-color: #5F8575;
     /* Azul corporativo */
     color: #ffffff;
@@ -840,7 +946,8 @@ button#guardarButton {
 
 button#submit:hover,
 button#addAcompananteButton:hover,
-button#guardarButton:hover {
+button#guardarButton:hover,
+button#deleteAcompananteButton:hover {
     background-color: #7fad9a;
     /* Azul más oscuro para hover */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
@@ -964,6 +1071,11 @@ button#submit:active {
         display: block;
         max-width: 100%;
     }
+
+    
+    div.footer_computer {
+        display: none;
+    }
 }
 
 @media (min-width: 769px) {
@@ -975,9 +1087,18 @@ button#submit:active {
     }
 }
 
-
+div.footer_computer {
+    position: relative;
+    height: 700px;
+    overflow: hidden;
+    background-image: url(../images/footer_computer.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center center;
+    mask-image: linear-gradient(to top, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0) 100%);
+}
 footer {
-    background-color: #6d6357;
+    background-color: #5F8575;
     padding: 10px;
     color: white;
 }

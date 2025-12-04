@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boda de Ainara & Borja</title>
-  <link rel="icon" href="images/icon.png" type="image/png">
+  <link rel="icon" href="images/icon.ico" type="image/ico">
   <!--<link rel="canonical" href="https://www.sarajordi2025.es/" />-->
 
   <!-- Enlaza tu archivo de estilos personalizado -->
@@ -47,8 +47,16 @@
 </head>
 
 <body class="custom-body"> <!--onload="checkPassword()"-->
-  <div id="">
-
+  <header>
+    <div id="banner">
+      <h1 class="animated-title">
+        <span class="pareja">Ainara & Borja</span><br><br>
+        <span>02/05/2026</span>
+      </h1>
+    </div>
+  </header>
+  <nav></nav>
+  <div class="body-computer">
     <!-- Autenticación -->
     <!-- <section id="login-container">
     <h1>Por favor, ingresa la clave</h1>
@@ -58,17 +66,6 @@
       <button type="submit">Ingresar</button>
     </form>
     </section> -->
-
-    <header>
-      <div id="banner">
-        <h1 class="animated-title">
-          <span>Ainara & Borja</span><br><br>
-          <span>02/05/2026</span>
-        </h1>
-      </div>
-    </header>
-
-    <nav></nav>
 
     <!-- BIENVENIDOS -->
     <div id="bienvenidos">
@@ -106,17 +103,17 @@
           </div>
         </div>
 
-        <img src="images/separation.png" alt="Separation element">
+        <img src="images/separation2.png" alt="Separation element">
       </div>
     </div>
-
-    <br>
 
     <!-- GENERAL INFORMATION -->
     <div id="general-information">
 
       <h1> CEREMONIA </h1>
-      <img class="element_ceremonia" src="images/ceremonia.svg" alt="Ceremonia" />
+      <div class="col-lg-12">
+        <img class="element_ceremonia" src="images/ceremonia.svg" alt="Ceremonia" />
+      </div>
       <div class="finca-image-container">
         <img src="images/finca.jpeg" alt="Finca" />
         <div class="information-texto">
@@ -218,17 +215,15 @@
       </div>
     </div>
 
-    <br><br>
-
     <div id="info_interes">
       <h1> INFORMACIÓN DE INTERÉS </h1>
       <img class="element_interes mb-2" src="images/interes.svg" alt="Info interes" />
 
       <p> Os dejamos por aquí una sugerencia de alojamientos cercanos a la ceremonia, por si necesitan hospedaje. </p>
             
-      <div class="col-sm-12">
+      <div class="col-sm-12 d-lg-none">
         <div class="col-sm-6">
-          <p class="text-start">Durango: </p>
+          <p class="text-start"><b>Durango:</b></p>
           <ul class="pl-5 m-0" style="list-style-type: none;">
             <li class="text-left">
               <a href="https://www.hoteles-silken.com/es/gran-hotel-durango/"
@@ -246,7 +241,7 @@
           <br>
         </div>
         <div class="col-sm-6">
-          <p class="text-start">Atxondo: </p>
+          <p class="text-start"><b>Atxondo:</b></p>
           <ul class="pl-5 m-0" style="list-style-type: none;">
             <li class="text-left">
               <a href="https://casagoikomaia.com/"
@@ -259,6 +254,33 @@
           </ul>
           <br>
         </div>
+      </div>
+
+      <div class="col-lg-12 d-lg-block table-computer">
+        <table>
+          <thead>
+            <th>Durango</th>
+            <th>Atxondo</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="https://www.hoteles-silken.com/es/gran-hotel-durango/"
+              class="hotel-link" target="_blank">🛎️ Silken gran Hotel Durango**** </a></td>
+              <td><a href="https://casagoikomaia.com/"
+              class="hotel-link" target="_blank">🛎️ Casa Rural Goikomaia </a></td>
+            </tr>
+            <tr>
+              <td><a href="https://olajauregi.com/"
+              class="hotel-link" target="_blank">🛎️ Hotel restaurante Olajauregi*** </a></td>
+              <td><a href="https://olazabalazpikoa.com/"
+              class="hotel-link" target="_blank">🛎️ Casa Rural Olazabal Azpikoa </a></td>
+            </tr>
+            <tr>
+              <td><a href="https://www.ocaminohotel.es"
+              class="hotel-link" target="_blank">🛎️ Hotel O Camiño* </a></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       
       <p> Por otro lado, os dejamos ubicaciones y lugares turñisticos por la zona para quien quiera visitarlos. </p>
@@ -291,16 +313,16 @@
         <div class="form-container-asist">
           <form id="attendance-form">
             <div>
-              <label for="nombre">Nombre completo *:</label>
-              <input type="text" id="nombre" name="nombre" required>
+              <label for="nombre" class="col-lg-12">Nombre completo *:</label>
+              <input type="text" id="nombre" name="nombre" required class="col-lg-12">
             </div>
             <div>
-              <label for="telefono">Teléfono *:</label>
-              <input type="tel" id="telefono" name="telefono" required>
+              <label for="telefono" class="col-lg-12">Teléfono *:</label>
+              <input type="tel" id="telefono" name="telefono" required class="col-lg-12">
             </div>
             <div>
-              <label for="alergias">Alergias, intolerancias o alguna condición que debamos tener en cuenta:</label>
-              <input type="text" id="alergias" name="nombre">
+              <label for="alergias" class="col-lg-12">Alergias, intolerancias o alguna condición que debamos tener en cuenta:</label>
+              <input type="text" id="alergias" name="nombre" class="col-lg-12">
             </div>
             <br>
             <div>
@@ -325,7 +347,7 @@
             <br>
             <div id="popup">
               <h2>Añade a tus acompañantes</h2>
-              <span id="closeButton"><img class="w-10" src="images/cerrar.svg" alt="Cerrar modal" /></span>
+              <span id="closeButton"><img class="" src="images/cerrar.svg" alt="Cerrar modal" /></span>
               <button type="button" id="addAcompananteButton">Añadir Acompañante</button>
               <div id="accompaniments-list"></div>
               <br>
@@ -338,7 +360,7 @@
             <button type="submit" id="submit" class="btn btn-primary">Confirmar Asistencia</button>
             <div id="mensaje-exito-modal" class="modal">
               <div class="modal-content">
-                <span class="close" id="cerrar-modal">×</span>
+                <span class="close" id="cerrar-modal"><img class="" src="images/cerrar.svg" alt="Cerrar modal" /></span>
                 <p>Gracias por confirmar tu asistencia</p>
               </div>
             </div>
@@ -346,20 +368,16 @@
         </div>
       </div>
     </div>
-
-    <br><br>
-
-    <img class="pre-footer desktop" src="images/footer_computer.jpg" alt="Final img" />
-    <img class="pre-footer mobile" src="images/footer.jpg" alt="Final img" />
+  </div>
+    <div class="footer_computer"></div>
+    <img class="pre-footer mobile" src="images/footer.png" alt="Final img" />
 
     <!-- Pie de página -->
     <footer>
       <div class="footer-content">
-        <p>© Sara & Jordi 2025</p>
+        <p>© Ainara & Borja 2026</p>
       </div>
     </footer>
-  </div>
-
 </body>
 
 </html>

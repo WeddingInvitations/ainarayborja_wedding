@@ -108,17 +108,25 @@ function addAcompanante() {
   // Añade campos para nombre, tipo y alergias
   nuevoParrafo.innerHTML = `
         <div class="acompanante">
-          <input type="text" placeholder="Nombre del Acompañante" class="name" >
-          <select class="type" name="tipo_acompanante[]">
-            <option value="adulto">Adulto</option>
-            <option value="niño">Menor</option>
-          </select>
-          <div class="edad-container"  style="display: none;">
-            <input type="number" placeholder="Edad del menor" class="edad" name="edad_niño" >
+          <div class="col-12">
+            <label for="nombreAcompanante"></label>
+            <input type="text" placeholder="Nombre del Acompañante" class="name" id="nombreAcompanante">
           </div>
-          <input type="text" placeholder="Alergias" class="allergies">
-          <br><br>
-          <button id="deleteAcompananteButton">Borrar Acompañante</button>
+          <div class="col-12 d-flex pt-3 ml-2 select_edad">
+            <select class="type col-sm-5 col-lg-4" name="tipo_acompanante[]">
+              <option value="adulto">Adulto</option>
+              <option value="niño">Menor</option>
+            </select>
+            <div class="edad-container col-sm-7 col-lg-8 mb-4"  style="display: none;">
+              <label for="edadNino"></label>
+              <input type="number" placeholder="Edad del menor" class="edad" name="edad_niño" id="edadNino">
+            </div>
+          </div>
+          <div class="col-12">
+            <label for="alergiasAcompanante"></label>
+            <input type="text" placeholder="Alergias" class="allergies" id="alergiasAcompanante">
+          </div>
+          <button type="button" id="deleteAcompananteButton">Borrar Acompañante</button>
         </div>
         `;
 
