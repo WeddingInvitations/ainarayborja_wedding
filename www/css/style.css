@@ -402,6 +402,10 @@ audio {
     max-width: 3%;
 }
 
+.element_buses p{
+    white-space: nowrap;
+}
+
 
 @media only screen and (max-width: 600px) {
 
@@ -446,6 +450,12 @@ audio {
     .element_asistencia,
     .element_interes {
         max-width: 10%;
+    }
+    .element_buses{
+        max-width: 12%;
+    }
+    .element_buses p{
+        white-space: nowrap;
     }
     .carousel-item img{
         max-width: 100%!important;
