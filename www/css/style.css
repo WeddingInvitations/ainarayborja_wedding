@@ -825,6 +825,10 @@ label[for="busNo"]  {
     min-height: 750px;
 }
 
+#attendance-form select{
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 600px) {
 
     .acompanante select{
