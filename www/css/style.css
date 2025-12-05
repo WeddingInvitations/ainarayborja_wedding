@@ -408,6 +408,7 @@ audio {
   .event .description {
     font-size: 1.3rem;
     color: #555;
+    white-space: nowrap;
   }
   
   .event .description:hover {
