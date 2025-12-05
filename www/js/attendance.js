@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   checkboxSi.addEventListener("change", habilitarCampoAcompanante);
   checkboxNo.addEventListener("change", habilitarCampoAcompanante);
-  busSi.addEventListener("change", habilitarBus);
-  busNo.addEventListener("change", habilitarBus);
+  //busSi.addEventListener("change", habilitarBus);
+  //busNo.addEventListener("change", habilitarBus);
   // carne.addEventListener("change", habilitarComida);
   // pescado.addEventListener("change", habilitarComida);
 
@@ -34,14 +34,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-   function habilitarBus(event) {
+  /*function habilitarBus(event) {
      // Desmarcar el otro checkbox
      if (busNo.checked && event.target === busSi) {
        busNo.checked = false;
      } else if (busSi.checked && event.target === busNo) {
        busSi.checked = false;
      }
-   }
+   }*/
 
   // function habilitarComida(event) {
   //   // Desmarcar el otro checkbox
@@ -186,7 +186,10 @@ document.getElementById('attendance-form').addEventListener("submit", function (
   //   type = "Niño";
   // }
 
-  var bus = document.getElementById("busSi").checked;
+  var busElement = document.getElementById("bus");
+  var selectedIndex = busElement.selectedIndex;
+  var selectedOption = busElement.options[selectedIndex];
+  var bus = selectedOption.textContent;
   // var comida = document.getElementById("carne").checked;
 
   // if (comida) {
@@ -205,12 +208,25 @@ document.getElementById('attendance-form').addEventListener("submit", function (
 
     for (var i = 0; i < acompananteElements.length; i++) {
       var acompananteElement = acompananteElements[i];
+
+      //lógica para obtener el valor del deslegable del bus
+      var busElementAcomp = acompananteElement.querySelector("#bus");
+      // console.log("busElementAcomp", busElementAcomp);
+      var selectedIndexAcomp = busElementAcomp.selectedIndex;
+      // console.log("selectedIndexAcomp", selectedIndexAcomp);
+      var selectedOptionAcomp = busElementAcomp.options[selectedIndexAcomp];
+      // console.log("selectedOptionAcomp", selectedOptionAcomp);
+
+        // 4. Obtienes el texto de esa opción seleccionada
+        //    Usamos .text o .textContent (textContent es generalmente preferido)
+      var busAcomp = selectedOptionAcomp.textContent;
       // Obtener los valores de los campos del acompañante actual
       var acompanante = {
         Nombre: acompananteElement.querySelector(".name").value,
         TipoInvitado: acompananteElement.querySelector(".type").value,
         Edad: acompananteElement.querySelector(".edad").value,
-        Alergias: acompananteElement.querySelector(".allergies").value
+        Alergias: acompananteElement.querySelector(".allergies").value,
+        Bus: busAcomp
       };
 
       // acompanantes.push(acompanante);
@@ -261,8 +277,7 @@ document.getElementById('attendance-form').addEventListener("submit", function (
   document.getElementById("acompanadoSi").checked = "";
   document.getElementById("acompanadoNo").checked = "";
   //document.getElementById("cancion").value = "";
-  document.getElementById("busSi").checked = "";
-  document.getElementById("busNo").checked = "";
+  document.getElementById("bus").value = false;
   // document.getElementById("carne").checked = "";
   // document.getElementById("pescado").checked = "";
   // document.getElementById("adulto").checked = "";
@@ -311,7 +326,7 @@ async function enviarEmail(emailData) {
   console.log("Email data: ", emailData);
   // Enviar los datos al servidor
   try {
-    const response = await fetch('https://us-central1-sarayjordiwedding.cloudfunctions.net/enviarEmail', {
+    const response = await fetch('https://us-central1-ainarayborjawedding.cloudfunctions.net/enviarEmail', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

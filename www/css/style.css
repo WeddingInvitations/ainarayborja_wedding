@@ -35,64 +35,22 @@ div.body-computer{
 
 header{
     position: relative;
-    height: 500px;
+    height: 80vh;
     overflow: hidden;
-    background-image: url(../images/image_1.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: center 25%;
+    width: 100%;
+    padding-left: 20%;
+    padding-right: 20%;
+    background: #EEEEEE;
+}
+video {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
 }
 
-#banner {
-    position: absolute;
-    top: 47%;
-    left: 64%;
-    transform: translate(-52%, -53%); /* Centra el contenido */
-    width: 156%;
-    text-align: center; /* Centra el texto */
-    background-color: rgba(0, 0, 0, 0.5); 
-    padding: 200px;
-    height: 565px;
-}
-
-.animated-title {
-    display: inline-block; /* Permite aplicar transformaciones a cada letra */
-    font-size: 3em; /* Ajusta el tamaño según tu preferencia */
-    color: white; /* Cambia el color según lo que mejor resalte */
-    /* margin-left: -55px; */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejor legibilidad */
-    margin-left: -50px;
-    margin-right: 314px;
-    margin-top: revert-layer;
-}
-
-.animated-title span {
-    display: inline-block; /* Cada letra en su propio bloque */
-    opacity: 0; /* Comienza invisible */
-    animation: slideIn 0.8s forwards; /* Aplicar la animación */
-}
-
-@keyframes slideIn {
-    0% {
-        transform: translateX(-100%); /* Desde la izquierda */
-        opacity: 0;
-    }
-    50% {
-        opacity: 1; /* Totalmente visible en el centro */
-    }
-    100% {
-        transform: translateX(0); /* Posición final */
-        opacity: 1;
-    }
-}
-
-/* Retraso para cada letra */
-.animated-title span:nth-child(odd) { 
-    animation-delay: calc(0.1s * var(--i)); 
-}
-.animated-title span:nth-child(even) { 
-    animation-delay: calc(0.1s * var(--i)); 
-}
 
 /* HEADER adaptado */
 .pre-header {
@@ -110,39 +68,19 @@ header{
         background-color: #FFF;
     }
 
-    header {
+    header{
         position: relative;
-        height: 300px;
-        overflow: hidden; /* Oculta cualquier desbordamiento */
-        background-image: url('../images/image_1.jpg'); /* Ruta de la imagen */
-        background-size: cover;       
+        height: 50vh;
+        overflow: hidden;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
     }
-
-    #banner {
-        position: absolute;
-        top: 47%;
-        left: 64%;
-        transform: translate(-41%, -53%); /* Centra el contenido */
-        width: 166%;
-        text-align: center; /* Centra el texto */
-        background-color: rgba(0, 0, 0, 0.5); 
-        padding: 20px;
-        height: 337px;
-    }
-
-    .animated-title {
-        display: inline-block; /* Permite aplicar transformaciones a cada letra */
-        font-size: 2.5em; /* Ajusta el tamaño según tu preferencia */
-        color: white; /* Cambia el color según lo que mejor resalte */
-        /* margin-left: -55px; */
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejor legibilidad */
-        margin-left: 0;
-        margin-right: 260px;
-        margin-top: revert-layer;
-    }
-
-    .animated-title .pareja {
-        margin-bottom: 65px;
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        object-position: center;
     }
 }
 
@@ -261,6 +199,7 @@ audio {
     padding: 20px;
     border-radius: 10px;
     color: darkolivegreen;
+    background-image: url(../images/fondo_contador.png);
   }
   
   #cuenta-atras {
@@ -458,7 +397,8 @@ audio {
 .element_bienvenidos,
 .element_nosotros,
 .element_asistencia,
-.element_interes {
+.element_interes,
+.element_buses {
     max-width: 3%;
 }
 
@@ -472,6 +412,14 @@ audio {
     .element_asistencia,
     .element_interes {
         max-width: 10%;
+    }
+
+    .element_buses{
+        max-width: 12%;
+    }
+
+    .element_buses p{
+        white-space: nowrap;
     }
     
     .element-escalas {
@@ -594,6 +542,19 @@ audio {
 .hotel-link:hover {
     color: #0056b3;
     text-decoration: none;
+}
+
+#servicio_buses{
+    text-align: center;
+    padding: 20px;
+    background-color: #FFF;
+}
+
+#servicio_buses h1 {
+    color: #5F8575;
+    font-family: "Oooh Baby", cursive;
+    font-size: 35px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .boton-telefono button {
@@ -858,6 +819,9 @@ label[for="busNo"]  {
 
     .acompanante select{
         max-width: 40%;
+    }
+    #attendance-form select{
+        max-width: 100%;
     }
 
     #asistencia {

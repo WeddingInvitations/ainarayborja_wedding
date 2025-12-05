@@ -48,12 +48,9 @@
 
 <body class="custom-body"> <!--onload="checkPassword()"-->
   <header>
-    <div id="banner">
-      <h1 class="animated-title">
-        <span class="pareja">Ainara & Borja</span><br><br>
-        <span>02/05/2026</span>
-      </h1>
-    </div>
+    <video autoplay="" loop="" muted="" playsinline="">
+        <source src="video/portada.mp4" type="video/mp4">
+    </video>
   </header>
   <nav></nav>
   <div class="body-computer">
@@ -102,8 +99,6 @@
             </div>
           </div>
         </div>
-
-        <img src="images/separation2.png" alt="Separation element">
       </div>
     </div>
 
@@ -119,7 +114,7 @@
         <div class="information-texto">
           <p>
             Mendi Goikoa Bekoa<br>
-            Barrio San Juan, 38, 48291 Axpe-Martzaa / Axpe Marzana, Biscay<br>
+            Barrio San Juan, 38, 48291 Axpe-Martzaa<br>
           </p>
         </div>
       </div>
@@ -130,8 +125,6 @@
           Cómo llegar
         </a>
       </div>
-
-      <div id="mapDiv"></div>
 
       <br>
 
@@ -291,6 +284,32 @@
         <br>
       </div>
 
+      <p> Por otro lado, os dejamos ubicaciones y lugares turñisticos por la zona para quien quiera visitarlos. </p>
+      <div class="hotel-info">
+        <a href=""
+          class="hotel-link" target="_blank">
+          Rutas turísticas </a>
+        <br>
+      </div>
+
+      <div id="servicio_buses">
+        <h1> SERVICIO DE AUTOBUSES </h1>
+        <img class="element_interes mb-2" src="images/buses.svg" alt="Autobus" />
+        <p> Por último, pero no menos importante. Queremos que solo os preocupéis de pasarlo bien, así que ponemos a vuestra disposición autobuses que os trasladarán a la celebración. </p>
+        <div class="col-sm-12 p-0">
+          <img class="element_buses mb-2" src="images/ubicacion_bus.svg" alt="Ubicacion icono" />
+          <p>Plentzia (Estación de metro)</p>
+        </div>
+        <div class="col-sm-12 p-0">
+          <img class="element_buses mb-2" src="images/ubicacion_bus.svg" alt="Ubicacion icono" />
+          <p>Basauri</p>
+        </div>
+        <div class="col-sm-12 p-0">
+            <img class="element_buses mb-2" src="images/ubicacion_bus.svg" alt="Ubicacion icono" />
+            <p>Durango (Parada autobuses Magdalena)</p>
+        </div>
+      </div>
+
       <div>
         <p> Si tienes alguna duda y prefieres consultarnos, aquí tienes nuestros contactos:</p>
         <div class="contacto-info">
@@ -336,13 +355,18 @@
             </div>
             <br>
             <div>
+            <div>
               <label><span id="subtitle">Transporte</span></label>
             </div>
-            <div>
-              <input type="checkbox" id="busNo" name="bus">
-              <label for="busNo">No necesito transporte</label>
-              <input type="checkbox" id="busSi" name="bus">
-              <label for="busSi">Necesito transporte</label>
+            <select name="bus" id="bus">
+              <option value="" selected disabled class="text-center">-- Elige una opción --</option>
+              <!-- Opción por defecto, seleccionada y deshabilitada -->
+              <option value="No"> No </option>
+              <option value="Bus1"> Bus 1: Plentzia (Estación de metro) </option>
+              <option value="Bus2"> Bus 2: Basauri </option>
+              <option value="Bus3"> Bus 3: Durango (Parada autobuses Magdalena) </option>
+              <!-- Añade o quita las tallas que necesites -->
+            </select>
             </div>
             <br>
             <div id="popup">
