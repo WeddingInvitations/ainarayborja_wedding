@@ -483,7 +483,57 @@ audio {
     }
 
     .timeline {
-        margin-left: auto;
+        margin-left: auto!important;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .timeline {
+        margin-left: 45px;
+    }
+    .element_itinerario,
+    .element_ceremonia,
+    .element_bienvenidos,
+    .element_nosotros,
+    .element_asistencia,
+    .element_interes {
+        max-width: 10%;
+    }
+    .carousel-item img{
+        max-width: 100%!important;
+    }
+    .table-computer{
+        display: none;
+    }
+    .event .description {
+        white-space: nowrap;
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+        padding: 0;
+    }
+    .form-container-asist{
+        max-width: 100%!important;
+    }
+    input[type="text"], input[type="tel"]{
+        width: 70%!important;
+    }
+        /* Para móviles */
+    .pre-footer.mobile {
+        display: block;
+        max-width: 100%;
+    }
+
+    
+    div.footer_computer {
+        display: none;
+    }
+
+    .bienvenidos-texto img{
+        height: auto!important;
     }
 }
 
@@ -831,7 +881,7 @@ label[for="busNo"]  {
     input[type="text"],
     input[type="tel"] {
         position: relative;
-        width: 100%;
+        width: 100%!important;
         border: none;
         border-radius: 26px;
         background: #5F8575;
@@ -1060,23 +1110,8 @@ button#submit:active {
 .pre-footer {
     mask-image: linear-gradient(to top, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0) 100%);
     height: auto;
-    margin: auto;
     display: none;
     /* Oculta ambas imágenes por defecto */
-}
-
-@media (max-width: 768px) {
-
-    /* Para móviles */
-    .pre-footer.mobile {
-        display: block;
-        max-width: 100%;
-    }
-
-    
-    div.footer_computer {
-        display: none;
-    }
 }
 
 @media (min-width: 769px) {
