@@ -181,6 +181,8 @@ audio {
     text-align: center;
     padding: 20px;
     padding: 10px; /* Ajusta el relleno según sea necesario */
+    color: #555;
+    font-size: large;
 }
 
 
@@ -198,7 +200,7 @@ audio {
     align-items: center;
     padding: 20px;
     border-radius: 10px;
-    color: darkolivegreen;
+    color: #555;
     background-image: url(../images/fondo_contador.png);
   }
   
@@ -406,6 +408,10 @@ audio {
     white-space: nowrap;
 }
 
+iframe{
+    width: 50%;
+}
+
 
 @media only screen and (max-width: 600px) {
 
@@ -443,6 +449,7 @@ audio {
     .timeline {
         margin-left: 45px;
     }
+
     .element_itinerario,
     .element_ceremonia,
     .element_bienvenidos,
@@ -451,21 +458,27 @@ audio {
     .element_interes {
         max-width: 10%;
     }
+
     .element_buses{
         max-width: 12%;
     }
+
     .element_buses p{
         white-space: nowrap;
     }
+
     .carousel-item img{
         max-width: 100%!important;
     }
+
     .table-computer{
         display: none;
     }
+
     .event .description {
         white-space: nowrap;
     }
+
     ul{
         display: flex;
         flex-direction: column;
@@ -473,13 +486,16 @@ audio {
         text-align: left;
         padding: 0;
     }
+
     .form-container-asist{
         max-width: 100%!important;
     }
+
     input[type="text"], input[type="tel"]{
         width: 70%!important;
     }
-        /* Para móviles */
+    
+    /* Para móviles */
     .pre-footer.mobile {
         display: block;
         max-width: 100%;
@@ -492,6 +508,10 @@ audio {
 
     .bienvenidos-texto img{
         height: auto!important;
+    }
+
+    iframe{
+        width: 100%;
     }
 }
 
@@ -1011,8 +1031,8 @@ button#submit:active {
 
 .contacto-info a {
     display: inline-block;
-    background-color: #5F8575;
-    color: white;
+    background-image: url(../images/fondo_contador.png);
+    color: #555;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 25px;
@@ -1021,11 +1041,11 @@ button#submit:active {
 }
 
 .contacto-info a:hover {
-    background-color: #7fad9a;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
 }
+
 
 @media only screen and (max-width: 600px) {
     .contacto-info b {
