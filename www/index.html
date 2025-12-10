@@ -278,9 +278,9 @@
         </table>
       </div>
       
-      <p> Por otro lado, os dejamos ubicaciones y lugares turísticos por la zona para quien quiera visitarlos. </p>
-      <div class="hotel-info">
-        <a href="" class="hotel-link" target="_blank"> Rutas turísticas </a>
+      <p> Por otro lado, os dejamos un PDF con ubicaciones y lugares turísticos por la zona para quien quiera visitarlos. </p>
+      <div class="col-sm-12">
+        <a href="documents/Ainara&Borja_RutasTuristicas.pdf" class="hotel-link" target="_blank" download><img class="pdf_img mb-2" src="images/pdf_icon.svg" alt="PDF" /> ¡Haz click para comenzar la descarga!</a>
         <br>
       </div>
 
@@ -301,18 +301,6 @@
             <p>Durango (Parada autobuses Magdalena)</p>
         </div>
       </div>
-
-      <!--<div id="musica">
-        <h1> MÚSICA </h1>
-        <img class="element_interes mb-2" src="images/musica_logo.svg" alt="Musica" />
-        <p> ¿Que sería una boda sin su música, bailes y risas? Aquí teneis una lista donde podeís ir añadiendo canciones para la gran fiesta. ¿Bailamos? </p>
-        <div class="col-sm-12 p-0">
-          <a href="https://open.spotify.com/playlist/0dM2ofRenil5wridMUCLX1?si=e7a06e8b9dfb4063&pt=c5e3a6ebfb4cd39a36d9e93238c4cf4b">¡Añadir canción!</a>
-        </div>
-        <div class="col-sm-12 p-0">
-          <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0dM2ofRenil5wridMUCLX1?utm_source=generator" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
-      </div>-->
 
       <div>
         <p> Si tienes alguna duda y prefieres consultarnos, aquí tienes nuestros contactos:</p>
@@ -347,6 +335,10 @@
               <label for="alergias" class="col-lg-12">Alergias, intolerancias o alguna condición que debamos tener en cuenta:</label>
               <input type="text" id="alergias" name="nombre" class="col-lg-12">
             </div>
+            <div>
+              <label for="cancion" class="col-lg-12">¿Qué canción no puede faltar?</label>
+              <input type="text" id="cancion" name="cancion" class="col-lg-12">
+            </div>
             <br>
             <div>
               <label><span id="subtitle">Acompañantes</span></label>
@@ -359,18 +351,18 @@
             </div>
             <br>
             <div>
-            <div>
-              <label><span id="subtitle">Transporte</span></label>
-            </div>
-            <select name="bus" id="bus">
-              <option value="" selected disabled class="text-center">-- Elige una opción --</option>
-              <!-- Opción por defecto, seleccionada y deshabilitada -->
-              <option value="No"> No </option>
-              <option value="Bus1"> Bus 1: Plentzia (Estación de metro) </option>
-              <option value="Bus2"> Bus 2: Basauri </option>
-              <option value="Bus3"> Bus 3: Durango (Parada autobuses Magdalena) </option>
-              <!-- Añade o quita las tallas que necesites -->
-            </select>
+              <div>
+                <label><span id="subtitle">Transporte</span></label>
+              </div>
+              <select name="bus" id="bus">
+                <option value="" selected disabled class="text-center">-- Elige una opción --</option>
+                <!-- Opción por defecto, seleccionada y deshabilitada -->
+                <option value="No"> No </option>
+                <option value="Bus1"> Bus 1: Plentzia (Estación de metro) </option>
+                <option value="Bus2"> Bus 2: Basauri </option>
+                <option value="Bus3"> Bus 3: Durango (Parada autobuses Magdalena) </option>
+                <!-- Añade o quita las tallas que necesites -->
+              </select>
             </div>
             <br>
             <div id="popup">
@@ -381,9 +373,7 @@
               <br>
               <button type="button" id="guardarButton">Guardar</button>
             </div>
-
             <br>
-
             <div id="overlay"></div>
             <button type="submit" id="submit" class="btn btn-primary">Confirmar Asistencia</button>
             <div id="mensaje-exito-modal" class="modal">

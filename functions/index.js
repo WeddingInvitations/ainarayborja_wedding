@@ -15,7 +15,7 @@ exports.enviarEmail = onRequest({cors: true}, async (req, res) => {
   logger.info("Iniciando envío de email...", {structuredData: true});
   logger.info("Request body:", JSON.stringify(req.body, null, 2));
 
-  const {nm, ph, att, ale, gue, bus} = req.body;
+  const {nm, ph, att, ale, gue, bus, song} = req.body;
 
   // Validar datos mínimos necesarios
   if (!nm || !ph) {
@@ -27,6 +27,7 @@ exports.enviarEmail = onRequest({cors: true}, async (req, res) => {
   text += `Teléfono:${ph}\n`;
   text += `Alergias:${ale}\n`;
   text += `Transporte: ${bus}\n\n`;
+  text += `Canción: ${song}\n\n`;
 
   if (!att) {
     text += "Acompañantes: No voy acompañado\n";
@@ -40,9 +41,9 @@ exports.enviarEmail = onRequest({cors: true}, async (req, res) => {
     });
   }
 
-  const email1 = "roberac88@gmail.com";
+  const email1 = "ainarasalazar@hotmail.com";
   // const email1 = "f14agui@gmail.com";
-  const email2 = "eli.db3@gmail.com";
+  const email2 = "borjaausin@hotmail.com";
 
   // Crear el email para Brevo
   const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
@@ -111,8 +112,8 @@ exports.exportarInvitados = onRequest({cors: true}, async (req, res) => {
         "Nombre": data.Nombre || "",
         "Teléfono": data.Teléfono || "",
         "Alergias": data.Alergias || "Sin alergias",
-        /*"Bebida": data.Bebida || "",
-        "Canción": data.Cancion || "",*/
+        /* "Bebida": data.Bebida || "",*/
+        "Canción": data.Cancion || "",
         "Transporte": data.Bus ? "SÍ" : "NO",
         "Tiene Acompañantes": data.Asistencia ? "SÍ" : "NO",
         "Fecha Registro": data.timestamp ? new Date(data.timestamp).toLocaleDateString("es-ES") : "",
@@ -130,7 +131,7 @@ exports.exportarInvitados = onRequest({cors: true}, async (req, res) => {
             "Nombre": acompanante.Nombre || "",
             "Teléfono": data.Teléfono || "", // Mismo teléfono que el principal
             "Alergias": acompanante.Alergias || "Sin alergias",
-            //"Canción": acompanante.Cancion || "",
+            "Canción": acompanante.Cancion || "",
             "Transporte": data.Bus ? "SÍ" : "NO", // Mismo transporte
             "Tiene Acompañantes": "N/A",
             "Fecha Registro": data.timestamp ? new Date(data.timestamp).toLocaleDateString("es-ES") : "",
@@ -155,7 +156,8 @@ exports.exportarInvitados = onRequest({cors: true}, async (req, res) => {
       {wch: 25}, // Nombre
       {wch: 15}, // Teléfono
       {wch: 20}, // Alergias
-      {wch: 15}, // Plato Principal
+      {wch: 25}, // Cancion
+      // {wch: 15}, // Plato Principal
       {wch: 12}, // Transporte
       {wch: 18}, // Tiene Acompañantes
       {wch: 15}, // Fecha Registro

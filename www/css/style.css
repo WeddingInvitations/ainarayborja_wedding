@@ -400,7 +400,8 @@ audio {
 .element_nosotros,
 .element_asistencia,
 .element_interes,
-.element_buses {
+.element_buses,
+.pdf_img {
     max-width: 3%;
 }
 
@@ -422,6 +423,10 @@ iframe{
     .element_asistencia,
     .element_interes {
         max-width: 10%;
+    }
+
+    .pdf_img {
+        max-width: 10%!important;
     }
 
     .element_buses{
@@ -457,6 +462,10 @@ iframe{
     .element_asistencia,
     .element_interes {
         max-width: 10%;
+    }
+
+    .pdf_img{
+        max-width: 7%;
     }
 
     .element_buses{
@@ -915,7 +924,8 @@ label[for="busNo"]  {
     height: 20px;
     /* Ajusta el tamaño según sea necesario */
 }
-#closeButton img {
+#closeButton img,
+#cerrar-modal img {
    width: 30px;
 }
 

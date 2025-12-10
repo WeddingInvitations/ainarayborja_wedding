@@ -177,7 +177,7 @@ document.getElementById('attendance-form').addEventListener("submit", function (
   var name = document.getElementById("nombre").value;
   var phone = document.getElementById("telefono").value;
   var allergies = document.getElementById("alergias").value;
-  //var song = document.getElementById("cancion").value;
+  var song = document.getElementById("cancion").value;
   var attendance = document.getElementById("acompanadoSi").checked;
 
   // if (type) {
@@ -244,7 +244,7 @@ document.getElementById('attendance-form').addEventListener("submit", function (
     Teléfono: phone,
     Asistencia: attendance,
     Alergias: allergies,
-    //Cancion: song,
+    Cancion: song,
     Bus: bus,
     // Comida: comida,
     Acompañantes: acompanantes
@@ -261,7 +261,8 @@ document.getElementById('attendance-form').addEventListener("submit", function (
         att: attendance,
         ale: allergies,
         bus: bus,
-        gue: acompanantes
+        gue: acompanantes,
+        song: song
       };
       enviarEmail(emailData);
 
@@ -276,8 +277,8 @@ document.getElementById('attendance-form').addEventListener("submit", function (
   document.getElementById("alergias").value = "";
   document.getElementById("acompanadoSi").checked = "";
   document.getElementById("acompanadoNo").checked = "";
-  //document.getElementById("cancion").value = "";
-  document.getElementById("bus").value = false;
+  document.getElementById("cancion").value = "";
+  document.getElementById("bus").value = "";
   // document.getElementById("carne").checked = "";
   // document.getElementById("pescado").checked = "";
   // document.getElementById("adulto").checked = "";
