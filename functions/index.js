@@ -15,7 +15,7 @@ exports.enviarEmail = onRequest({cors: true}, async (req, res) => {
   logger.info("Iniciando envío de email...", {structuredData: true});
   logger.info("Request body:", JSON.stringify(req.body, null, 2));
 
-  const {nm, ph, att, ale, gue, bus, song} = req.body;
+  const {nm, ph, att, ale, bus, gue, song} = req.body;
 
   // Validar datos mínimos necesarios
   if (!nm || !ph) {
@@ -23,21 +23,46 @@ exports.enviarEmail = onRequest({cors: true}, async (req, res) => {
     return res.status(400).json({message: "Faltan datos obligatorios"});
   }
 
+  // Visualizacion principal, en caso de bloqueo, usara la de texto
+  let html = `<strong>Nombre:</strong> ${nm}<br>`;
+  html += `<strong>Teléfono:</strong> ${ph}<br>`;
+  html += `<strong>Alergias:</strong> ${ale}<br>`;
+  html += `<strong>Transporte:</strong> ${bus}<br>`;
+  html += `<strong>Canción:</strong> ${song}<br><br>`;
+
+  // Fallback, por si acaso se bloquea la visualizacion html
   let text = `Nombre:${nm}\n`;
   text += `Teléfono:${ph}\n`;
   text += `Alergias:${ale}\n`;
   text += `Transporte: ${bus}\n\n`;
   text += `Canción: ${song}\n\n`;
 
+
   if (!att) {
     text += "Acompañantes: No voy acompañado\n";
+    html += "<strong>Acompañantes:</strong> No voy acompañado<br>";
   } else {
+    html += "<strong>Acompañantes:</strong><br><ul>";
+    gue.forEach((acompanante, index) => {
+      html += `<li>Acompañante ${index + 1}:`;
+      html += `<ul>`;
+      html += `<li>Nombre: ${acompanante.Nombre}</li>`;
+      html += `<li>Tipo: ${acompanante.TipoInvitado}</li>`;
+      html += `<li>Alergias: ${acompanante.Alergias}</li>`;
+      html += `<li>Cancion: ${acompanante.Cancion}</li>`;
+      html += `<li>Transporte: ${acompanante.Bus}</li>`;
+      html += `</ul></li>`;
+    });
+    html += `</ul>`;
+
     text += "Acompañantes:\n";
     gue.forEach((acompanante, index) => {
-      text += `\tAcompañante ${index + 1}:\n`;
-      text += `\t\tNombre: ${acompanante.Nombre}\n`;
-      text += `\t\tAlergias: ${acompanante.Alergias}\n`;
-      text += `\t\tTransporte: ${acompanante.Bus}\n\n`;
+      text += `--- Acompañante ${index + 1} ---\n`;
+      text += `* Nombre: ${acompanante.Nombre}\n`;
+      text += `* Tipo: ${acompanante.TipoInvitado}\n`;
+      text += `* Alergias: ${acompanante.Alergias}\n`;
+      text += `* Cancion: ${acompanante.Cancion}\n`;
+      text += `* Transporte: ${acompanante.Bus}\n\n`;
     });
   }
 
@@ -56,6 +81,7 @@ exports.enviarEmail = onRequest({cors: true}, async (req, res) => {
     {email: email2, name: "Ainara y Borja"},
   ];
   sendSmtpEmail.subject = "Nueva asistencia registrada";
+  sendSmtpEmail.htmlContent = html;
   sendSmtpEmail.textContent = text;
 
   logger.info("Datos del email a enviar:", JSON.stringify(sendSmtpEmail, null, 2));

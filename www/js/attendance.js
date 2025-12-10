@@ -114,8 +114,8 @@ function addAcompanante() {
           </div>
           <div class="col-12 d-flex pt-3 ml-2 select_edad">
             <select class="type col-sm-5 col-lg-4" name="tipo_acompanante[]">
-              <option value="adulto">Adulto</option>
-              <option value="niño">Menor</option>
+              <option value="Adulto">Adulto</option>
+              <option value="Niño">Menor</option>
             </select>
             <div class="edad-container col-sm-7 col-lg-8 mb-4"  style="display: none;">
               <label for="edadNino"></label>
@@ -126,6 +126,24 @@ function addAcompanante() {
             <label for="alergiasAcompanante"></label>
             <input type="text" placeholder="Alergias" class="allergies" id="alergiasAcompanante">
           </div>
+          <div class="col-12">
+            <label for="alergiasAcompanante"></label>
+            <input type="text" id="cancionAcompanante" placeholder="¿Qué canción no puede faltar?" class="cancion">
+          </div>
+          <div class="mb-3">
+              <div>
+                <label><span id="subtitle">Transporte</span></label>
+              </div>
+              <select name="bus" id="bus">
+                <option value="" selected disabled class="text-center">-- Elige una opción --</option>
+                <!-- Opción por defecto, seleccionada y deshabilitada -->
+                <option value="No"> No </option>
+                <option value="Bus1"> Bus 1: Plentzia (Estación de metro) </option>
+                <option value="Bus2"> Bus 2: Basauri </option>
+                <option value="Bus3"> Bus 3: Durango (Parada autobuses Magdalena) </option>
+                <!-- Añade o quita las tallas que necesites -->
+              </select>
+            </div>
           <button type="button" id="deleteAcompananteButton">Borrar Acompañante</button>
         </div>
         `;
@@ -138,7 +156,7 @@ function addAcompanante() {
 
   // Agrega un evento para mostrar/ocultar el campo de edad
   selectTipo.addEventListener("change", function () {
-    if (selectTipo.value === "niño") {
+    if (selectTipo.value === "Niño") {
       edadContainer.style.display = "block"; // Muestra el campo de edad
     } else {
       edadContainer.style.display = "none"; // Oculta el campo de edad
@@ -226,6 +244,7 @@ document.getElementById('attendance-form').addEventListener("submit", function (
         TipoInvitado: acompananteElement.querySelector(".type").value,
         Edad: acompananteElement.querySelector(".edad").value,
         Alergias: acompananteElement.querySelector(".allergies").value,
+        Cancion: acompananteElement.querySelector(".cancion").value,
         Bus: busAcomp
       };
 
