@@ -775,9 +775,10 @@ input[type="tel"] {
     border: none;
     border-radius: 26px;
     background: #5F8575;
-    font-size: revert;
+    font-size: medium;
     margin: 10px;
     color: #FFF;
+    font-family: sans-serif;
 }
 .acompanante input[type="text"],
 .acompanante input[type="tel"],
@@ -787,9 +788,10 @@ input[type="tel"] {
     border: none;
     border-radius: 26px;
     background: #5F8575;
-    font-size: revert;
+    font-size: medium;
     margin: 10px;
     color: #FFF;
+    font-family: sans-serif;
 }
 .acompanante select{
     max-height: 30px;
@@ -849,6 +851,13 @@ label[for="busNo"]  {
     z-index: 1000;
     width: 450px;
 }
+
+#accompaniments-list {
+    max-height: 450px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
 .asistencia-texto{
     min-height: 750px;
 }
@@ -891,9 +900,10 @@ label[for="busNo"]  {
         border: none;
         border-radius: 26px;
         background: #5F8575;
-        font-size: revert;
+        font-size: medium;
         margin: 10px;
         color: #FFF;
+        font-family: sans-serif;
     }
 }
 
