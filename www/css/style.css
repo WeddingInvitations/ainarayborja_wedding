@@ -306,8 +306,14 @@ audio {
     margin: 50px 0;
     padding-left: 40px;
     border-left: 3px solid #5F8575;
-    margin-left: 550px;
-  }
+    margin-left: 23vw;
+}
+
+/* keep events stacked vertically */
+.timeline .event {
+    width: 100%;
+}
+
   
   .event {
     position: relative;
@@ -444,14 +450,17 @@ iframe{
         max-width: 12%;
     }
 
+    /* cleaned-up: keep timeline centred via margin auto */
     .timeline {
-        margin-left: auto!important;
+        margin: 50px auto !important;
     }
 }
 
 @media only screen and (max-width: 1024px) {
     .timeline {
-        margin-left: 45px;
+        margin: 50px auto; /* remain centred */
+        padding-left: 10px; /* slightly less gap on medium screens */
+        max-width: 90%;
     }
 
     .element_itinerario,
@@ -1159,4 +1168,17 @@ footer {
 .footer-content p {
     text-align: center;
     font-weight: 200;
+}
+
+@media (max-width: 1450px) {
+    .timeline{
+        margin-left: 30%;
+    }
+}
+
+
+@media (min-width: 1450px) and (max-width: 1850px) {
+    .timeline{
+        margin-left: 30%;
+    }
 }
